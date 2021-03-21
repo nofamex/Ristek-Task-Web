@@ -1,4 +1,4 @@
-import Navbar from '../components/Navbar';
+import { Navbar, NavbarMobile } from '../components/Navbar';
 
 import tw from 'twin.macro';
 
@@ -7,6 +7,7 @@ function Home() {
   return (
     <Container>
       <Navbar />
+      <NavbarMobile />
     </Container>
   );
 }
