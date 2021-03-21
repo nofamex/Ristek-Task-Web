@@ -5,9 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev-fe": "cd client && npm run dev",
-    "dev-be": "cd api && npm run dev"
+    "dev-be": "cd api && npm run dev",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "husky": "^5.1.3"
+  }
 }
