@@ -1,4 +1,4 @@
-import { Navbar, NavbarMobile } from '../components/Navbar';
+import Layout from '../components/Layout';
 
 import tw from 'twin.macro';
 
@@ -6,8 +6,9 @@ const Container = tw.div`h-screen`;
 function Home() {
   return (
     <Container>
-      <Navbar />
-      <NavbarMobile />
+      <Layout>
+        <Container />
+      </Layout>
     </Container>
   );
 }
