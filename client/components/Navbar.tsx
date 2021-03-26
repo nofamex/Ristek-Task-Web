@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import tw from 'twin.macro';
 
-const Nav = tw.div`h-auto flex w-full sticky top-0 p-3 dark:bg-primary`;
+const Nav = tw.div`h-auto flex w-full sticky top-0 p-3 dark:bg-primary z-10 bg-white`;
 const LogoContainer = tw.div`flex items-center justify-center cursor-pointer`;
 const LogoText = tw.h1`font-logoFont text-3xl text-primary ml-3 dark:text-white`;
 const MenuContainer = tw.div`flex-grow`;
@@ -19,7 +19,7 @@ const LongMenuButtonContainer = tw.div`flex w-full p-4 cursor-pointer`;
 const ButtonLogoOut = tw.div`w-9 h-9 rounded-full bg-white flex justify-center items-center cursor-pointer dark:bg-primary`;
 const ButtonLogoIn = tw.div`w-7 h-7 rounded-full bg-primary cursor-pointer dark:bg-white`;
 
-const RoundedMenu = tw`w-14 h-14 rounded-full bg-primary absolute bottom-6 flex justify-center items-center right-6 fixed md:hidden z-10 dark:(bg-white shadow-menuMobile)`;
+const RoundedMenu = tw`w-14 h-14 rounded-full bg-primary absolute bottom-6 flex justify-center items-center right-6 fixed md:hidden z-20 dark:(bg-white shadow-menuMobile)`;
 const LongMenuBot = tw`w-36 h-64 pb-5 bg-white shadow-menuMobile dark:bg-primary flex-col justify-center items-center md:hidden absolute fixed right-6 bottom-24 rounded-md`;
 const LongMenuContainer = tw`flex flex-col w-full h-4/5 justify-center items-center`;
 const LongMenuList = tw`h-auto w-full flex items-center justify-center text-primary cursor-pointer font-ubuntu font-semibold dark:text-white mt-5`;
