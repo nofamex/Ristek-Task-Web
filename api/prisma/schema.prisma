@@ -16,10 +16,19 @@ model users {
 }
 
 model blogs {
-  id           Int      @id @default(autoincrement())
+  id           Int        @id @default(autoincrement())
   owner_id     Int
   title        String
   body         String
-  time_created DateTime @default(now()) @db.Timestamp(6)
-  users        users    @relation(fields: [owner_id], references: [id])
+  time_created DateTime   @default(now()) @db.Timestamp(6)
+  users        users      @relation(fields: [owner_id], references: [id])
+  comments     comments[]
+}
+
+model comments {
+  id           Int      @id @default(autoincrement())
+  blog_id      Int
+  body         String
+  time_created DateTime @default(now()) @db.Date
+  blogs        blogs    @relation(fields: [blog_id], references: [id])
 }
