@@ -7,6 +7,7 @@ import { IconContext } from 'react-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import tw from 'twin.macro';
+import { useRouter } from 'next/router';
 
 const Nav = tw.div`h-auto flex w-full sticky top-0 p-3 dark:bg-primary z-10 bg-white`;
 const LogoContainer = tw.div`flex items-center justify-center cursor-pointer`;
@@ -96,6 +97,7 @@ const menus = ['Browse', 'Blogs', 'Bookmarks', 'Like'];
 export function Navbar() {
   const [isOn, setIsOn] = useState(false);
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
 
   const switchHandler = () => {
     setIsOn(!isOn);
@@ -116,7 +118,7 @@ export function Navbar() {
         />
       </Head>
       <Nav>
-        <LogoContainer>
+        <LogoContainer onClick={() => router.push('/')}>
           <IconContext.Provider value={{ color: isOn ? 'white' : '#43379d', size: '2.5em' }}>
             <FaQuinscape />
           </IconContext.Provider>
@@ -131,6 +133,7 @@ export function Navbar() {
                 variants={navItemVariants}
                 whileTap="tap"
                 whileHover="hover"
+                onClick={() => router.push(`/${menu}`)}
               >
                 {menu}
               </motion.div>
@@ -153,6 +156,7 @@ export function NavbarMobile() {
   const clickHandler = () => {
     setIsToggled(!isToggled);
   };
+  const router = useRouter();
 
   return (
     <>
@@ -188,6 +192,7 @@ export function NavbarMobile() {
                   key={index}
                   whileTap="tap"
                   whileHover="hover"
+                  onClick={() => router.push(`/${menu}`)}
                 >
                   <p>{menu}</p>
                 </motion.div>
