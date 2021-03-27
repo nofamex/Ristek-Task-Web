@@ -52,6 +52,6 @@ export class AuthService {
 
     const token = jwt.sign(user, config.JWT_SECRET_KEY, { expiresIn: '1h' });
 
-    return token;
+    return { token };
   }
 }

@@ -20,3 +20,15 @@ export const NoUserFoundError = (): ApiError => {
 export const WrongPasswordError = (): ApiError => {
   return new ApiError(INTERNAL_SERVER_ERROR, 'Sign In Failed', 'Wrong password');
 };
+
+export const UnauthorizedAccesError = (): ApiError => {
+  return new ApiError(INTERNAL_SERVER_ERROR, 'Unauthorized', 'You are unauthorized');
+};
+
+export const NoBlogsFoundError = (): ApiError => {
+  return new ApiError(
+    INTERNAL_SERVER_ERROR,
+    'No Blogs Found',
+    'This user never crete a blogs'
+  );
+};
