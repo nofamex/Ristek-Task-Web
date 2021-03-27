@@ -100,7 +100,7 @@ var AuthService = /** @class */ (function () {
                             return [2 /*return*/, ServiceError_1.WrongPasswordError()];
                         }
                         token = jsonwebtoken_1.default.sign(user, config_1.default.JWT_SECRET_KEY, { expiresIn: '1h' });
-                        return [2 /*return*/, token];
+                        return [2 /*return*/, { token: token }];
                 }
             });
         });
