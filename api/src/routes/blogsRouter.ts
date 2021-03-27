@@ -32,7 +32,6 @@ blogsRouter.put('/:id', convertToken, verifyUser, async (req: Request, res: Resp
     title,
     body,
   });
-  res.send(result);
 });
 
 blogsRouter.delete(
